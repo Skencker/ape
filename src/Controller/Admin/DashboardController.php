@@ -52,5 +52,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Fonctions Parents Délégués', 'fas fa-users-cog', FonctionsParents::class);
         yield MenuItem::linkToCrud('Parents Délégués', 'fas fa-user-plus', ParentsDelegues::class);
         yield MenuItem::linkToCrud('Conseils Ecole', 'fas fa-file-alt', ConseilsEcole::class);
+        yield MenuItem::linkToLogout('Deconnexion', 'fas fa-sign-out-alt', 'app_logout');
     }
 }

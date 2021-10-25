@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\FonctionsParents;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class FonctionsParentsCrudController extends AbstractCrudController
@@ -22,4 +23,12 @@ class FonctionsParentsCrudController extends AbstractCrudController
         ];
     }
     */
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setDefaultSort(['id' => 'ASC'])
+            ->setPageTitle('index', 'Liste des Fonctions')
+        ;
+    }
 }

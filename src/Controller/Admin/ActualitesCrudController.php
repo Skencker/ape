@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Actualites;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -36,6 +37,13 @@ class ActualitesCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setDefaultSort(['id' => 'ASC'])
+            ->setPageTitle('index', 'Liste des Actualit&s')
+        ;
     }
     
 }
