@@ -1,0 +1,18 @@
+.parents  {
+    height: 550px;
+  }
+ 
+.parents h2 {
+  width: 70%;
+  margin: auto;
+  background-color: var(--bleu);
+  color: var(--jaune);
+}
+
+.classe {
+  animation: slide-in-right 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.titre-classe {
+  font-size: 5px;
+}
