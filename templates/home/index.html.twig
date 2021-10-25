@@ -1,0 +1,331 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+<style>
+
+.baniere,
+.lien-info,
+.contact {
+    background-image: url("{{ asset('assets/images/ecole.jpg')}}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+}
+
+.baniere {
+  height: 700px;
+}
+
+.lien-info {
+  height: 30vh;
+}
+
+.titre {
+  font-family: 'Merriweather', serif;
+  letter-spacing: 0.5rem;
+  font-size: 50px;
+  font-weight: bold;
+  animation: roll-in-left 1.5s ease-out both;
+}
+
+.baniere a,
+.cards a,
+.contact a,
+.content a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  background: var(--bleu);
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.baniere a:hover,
+.cards a:hover,
+.contact a:hover,
+.content a:hover {
+  background-color: var(--jaune);
+  color: #1752a8;
+  transition: 0.5s;
+}
+
+img {
+  margin: auto;
+}
+
+/* association */
+
+.association {
+  height: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.association h2 {
+  font-family: 'Merriweather', serif;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  color: var(--bleu);
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.accordeon,
+.card {
+  background: #f7f5ed;
+  border: none;
+}
+
+.image-reunion img {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.association .accordeon {
+  font-weight: 900;
+  font-size: 20px;
+  padding-right: 50px;
+}
+
+/* liens  */
+
+hr {
+  background-color: white;
+  width: 50px;
+  margin: auto;
+  padding-bottom: 3px;
+  opacity: 1;
+}
+
+.lien-info {
+  height: 30vh;
+}
+
+.lien-info h3 {
+  font-size: 30px;
+  font-weight: 900;
+  margin-top: 50px;
+}
+
+.lien-info a {
+  text-decoration: none;
+}
+
+.lien-info i {
+  font-size: 50px;
+}
+
+.lien {
+  color: white;
+  cursor: pointer;
+}
+
+.lien:hover {
+  color: var(--jaune);
+}
+
+/* cards */
+
+.cards a {
+  font-size: 15px;
+  color: white;
+}
+
+.card:hover {
+  border: 2px var(--jaune) solid ;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+</style>
+<main class="container-fluid p-0 m-0 " ps-0>
+    <section class="baniere ">
+        <div class="row margin m-5 h-100 justify-content-center">
+            <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
+                <h1 class="text-light text-lg-end pt-5 ps-5">
+                    <div class="titre ">
+                        Association <br>
+                        Parents d'élèves <br> 
+                        Saint Pierre de Lages  
+                    </div>
+                    <div class="bouton mt-2 mb-5">
+                        <a href="actualites.php" class="text-center p-2 btn  btn-primary"> Actualités / évènements </a>
+                    </div>
+                </h1>
+            </div>
+            <!-- carroussel -->
+        <div class="col-lg-5 col-md-8 carroussel d-flex align-items-center justify-content-center ">
+
+        {# <div id="carousel" class="carousel slide carousel-fade carroussel d-flex align-items-center justify-content-center d-none d-md-block " data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {%  set isFirst = true %}
+                {% for imagediapo in imagediapos %}
+                    {% if isFirst == true %}
+                        <div class='carousel-item active data-interval="1000";'>
+                            {% else %}
+                                <div class='carousel-item data-interval="1000";'>
+                            {% endif %}
+                            <img alt="image-ape" src="/uploads/images/{{ imagediapo.fichier }}" class="d-block w-75 img img-fluid ">  
+                        </div> 
+                        {% set isFirst = false %}
+                {% endfor %}
+            </div>
+        </div>     #}
+    </section>
+    <section class="association d-flex justify-content-center align-items-center ">
+        <div class="row m-0 justify-content-center">
+            <h2 class="text-center pb-5">L'association</h2>
+            <div class="col-lg-6 col-sm-10 d-flex flex-column align-items-center ">
+                <div class="accordion accordion-flush align-self-center align-items-md-end w-100 p-5" id="accordionFlushExample">
+                    <div class="accordion-item ">
+                        <h2 class="accordion-header " id="flush-headingOne">
+                            <button class="accordeon accordion-button collapsed mb-3 " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Présentation
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Une association de parents d’élèves est une association qui regroupe exclusivement des parents d’élèves et les personnes ayant la responsabilité légale d’un ou plusieurs élèves.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordeon accordion-button collapsed  mb-3 font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Nos missions
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                   <h3> Les objectifs de l’APE </h3>
+                                <p> 
+                                        ❖ Participer et aider aux projets de la vie scolaire (sorties, activités artistiques et sportives...) <br>
+                                        ❖ Mener des actions afin de financer les sorties et la piscine.<br>
+                                        ❖ Organiser des animations et des évènements ponctuels pour les enfants - Renouveler la fête de Noël et de l’école dans le respect du protocole sanitaire.<br>
+                                        L’APE c’est d’abord des parents qui sont à votre écoute pour mieux répondre à vos attentes, vous informer et vous représenter. <br>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordeon accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Organigramme
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                    {# {% for organigramme in organigrammes%}
+                                        <a href="uploads/files/{{organigramme.fichier}}"> Organigramme</a>
+                                    {% endfor %} #}
+                                </br>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-10 image-reunion d-flex justify-content-center">
+                <img class="w-75 img-fluid img" src="{{ asset('assets/images/reunion.jpg')}}" alt="">
+            </div> 
+            </div>
+    </section>
+    <section class="lien-info d-flex justify-content-center align-items-center text-white">
+        <div class="row w-75 mx-5">
+            <div class="col-md-4 col-sm-12 ">
+            {# <a href="{{ path('actualites') }}" class="d-flex flex-column my-5 lien  align-items-center"> #}
+                <div class="d-flex justify-content-center ">
+                <i class="bi bi-star-fill text-center p-3"></i>
+                </div>
+                <hr >
+                <h3 class="text-center">Actu</h3>
+            </a>
+            </div>
+            <div class="col-md-4 col-sm-12  ">
+            {# <a href="{{ path('liens') }}" class="d-flex flex-column my-5 lien align-items-center"> #}
+                <div class="d-flex justify-content-center ">
+                <i class="bi bi-file-plus text-center p-3"></i>
+                </div>
+                <hr class="hr">
+                <h3 class="text-center">Liens</h3>
+            </a>
+            </div>
+            <div class="col-md-4 col-sm-12 ">
+            {# <a href="{{ path('ecolealae') }}" target="_blank" class="d-flex flex-column my-5 lien align-items-center"> #}
+                <div class="d-flex justify-content-center ">
+                <i class="bi bi-calendar3 text-center p-3"></i>
+                </div>
+                <hr >
+                <h3 class="text-center">Ecole / ALAE</h3>
+            </a>
+            </div>
+        </div>
+    </section>
+    <section class="cards d-flex justify-content-center">
+        <div class="row d-flex justify-content-center m-0">
+        <div class="col-lg-4 col-md-10 d-flex justify-content-center p-0">
+            <div class="card m-5 w-auto" style="width: 18rem;" >
+            <img src="{{ asset('assets/images/parents.jpg')}}" class="card-img-top" alt="parents">
+            <div class="card-body">
+                <h5 class="card-title h4 pb-4">Parents délégués</h5>
+                   <h6> Les objectifs des parents délégués </h6>
+                <p>
+                        ● Assurer le lien entre les parents, les enseignants, l’ALAE et la mairie <br>
+                        ● Intervenir pour assurer une médiation à la demande d’un ou des parents, auprès de l’enseignant concerné. <br>
+                        ● Défendre les intérêts matériels et moraux de tous les élèves. <br>
+                        ● Etre vigilant à la sécurité des enfants au sein de l’école et émettre des suggestions sur la restauration scolaire. <br>
+
+                </p>
+                {# <a href="{{ path('parents_delegues') }}" class="p-2" >En savoir plus</a> #}
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-10 d-flex justify-content-center p-0">
+        <div class="card m-5 w-auto" style="width: 18rem;">
+        <img src="{{ asset('assets/images/books.jpg')}}" class="card-img-top" alt="livres">
+        <div class="card-body">
+            <h5 class="card-title  h4 pb-4">Documents</h5>
+                      <h6> Retrouvez ici : </h6>
+                <p>
+                       ●	Nos bons de commandes en cours de diffusion. <br>
+                       ●	Les comptes rendus officiels des conseils d’école. ( N et N-1)  <br>
+                       ●	Un lien direct vers la publication des menus de la cantine sur le site de la Mairie de Saint Pierre de Lages! <br>
+
+
+                </p>
+            {# <a href="{{ path('documents') }}" class="p-2" >En savoir plus</a> #}
+        </div>
+        </div>
+        </div>
+            <div class="col-lg-4 col-md-10 d-flex justify-content-center">
+            <div class="card m-5  w-auto" style="width: 18rem;">
+                <img src="{{ asset('assets/images/enfants.jpg')}}" class="card-img-top" alt="enfant">
+                <div class="card-body">
+                <h5 class="card-title h4 pb-4">Autres</h5>
+                             <h6> Liens avec nos partenaires éducatifs: </h6>
+                <p>
+                        ●	Plannings d’activités des vacances de notre ALSH Léo Lagrange. <br>
+                        ●	Communiqués de l’école. <br>
+                        ●	Communiqués de la Mairie. <br>
+                </p>
+
+                {# <a href="{{ path('ecolealae') }}" class="p-2">En savoir plus</a> #}
+                </div>
+            </div>
+            </div>      
+        </div>
+    </section>
+    <section class="contact d-flex justify-content-center align-items-center text-white ">
+        <div class="row d-flex justify-content-between align-items-center text-white w-100 px-5">
+            <div class="col-lg-6 justify-content-center">
+            <h3 class="text-center">Contactez nous</h3>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center">
+            {# <a href="{{ path('contact') }}">Contact</a> #}
+            </div>
+        </div>
+    </section>
+            </main>
+
+{% endblock %}
