@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualités{% endblock %}
+
+{% block content %}
+
+<style>
+    .contact {
+        background-image: url("{{ asset('assets/images/ecole.jpg')}}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100%;
+    }
+    .baniere-actualites {
+        background-image: url("{{ asset('assets/images/ballons.jpg')}}");
+    }
+</style>
+<main>
+        <section class="baniere-actualites d-flex justify-content-center">
+            <h1 class="align-self-center ">Actualités</h1>
+        </section>
+        <section class="events">
+            <div class="container">
+                <div class="row event">
+                        {% for actualite in actualites %}
+                            <div class="col-lg-6 col-md-12 p-5">
+                                <img class="img img-fluid" src="/uploads/images/{{ actualite.image }}"alt="{{ actualite.name }}">
+                            </div>
+                            <div class="col p-5">
+                                <h2 >{{ actualite.name }}</h2>
+                                <hr>
+                                <h4> {{ actualite.date|date("d/m/Y")}} </h4>
+                                <p>{{ actualite.description }}</p>
+                                <a href=""> Document </a>
+                            </div>
+                        {% endfor %}
+                </div>
+            </div>
+        </section>
+    <section class="contact d-flex justify-content-center align-items-center text-white ">
+        <div class="row d-flex justify-content-between align-items-center text-white w-100 px-5">
+            <div class="col-lg-6 justify-content-center">
+            <h3 class="text-center fs-md-5">Contactez nous</h3>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center">
+            <a href="{{ path('contact') }}" >Contact</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+{% endblock %}

@@ -16,129 +16,6 @@
     width: 100%;
 }
 
-.baniere {
-  height: 700px;
-}
-
-.lien-info {
-  height: 30vh;
-}
-
-.titre {
-  font-family: 'Merriweather', serif;
-  letter-spacing: 0.5rem;
-  font-size: 50px;
-  font-weight: bold;
-  animation: roll-in-left 1.5s ease-out both;
-}
-
-.baniere a,
-.cards a,
-.contact a,
-.content a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: white;
-  background: var(--bleu);
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 3px;
-}
-
-.baniere a:hover,
-.cards a:hover,
-.contact a:hover,
-.content a:hover {
-  background-color: var(--jaune);
-  color: #1752a8;
-  transition: 0.5s;
-}
-
-img {
-  margin: auto;
-}
-
-/* association */
-
-.association {
-  height: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.association h2 {
-  font-family: 'Merriweather', serif;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-  color: var(--bleu);
-  font-size: 40px;
-  font-weight: 900;
-}
-
-.accordeon,
-.card {
-  background: #f7f5ed;
-  border: none;
-}
-
-.image-reunion img {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.association .accordeon {
-  font-weight: 900;
-  font-size: 20px;
-  padding-right: 50px;
-}
-
-/* liens  */
-
-hr {
-  background-color: white;
-  width: 50px;
-  margin: auto;
-  padding-bottom: 3px;
-  opacity: 1;
-}
-
-.lien-info {
-  height: 30vh;
-}
-
-.lien-info h3 {
-  font-size: 30px;
-  font-weight: 900;
-  margin-top: 50px;
-}
-
-.lien-info a {
-  text-decoration: none;
-}
-
-.lien-info i {
-  font-size: 50px;
-}
-
-.lien {
-  color: white;
-  cursor: pointer;
-}
-
-.lien:hover {
-  color: var(--jaune);
-}
-
-/* cards */
-
-.cards a {
-  font-size: 15px;
-  color: white;
-}
-
-.card:hover {
-  border: 2px var(--jaune) solid ;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
 
 </style>
 <main class="container-fluid p-0 m-0 " ps-0>
@@ -159,7 +36,7 @@ hr {
             <!-- carroussel -->
         <div class="col-lg-5 col-md-8 carroussel d-flex align-items-center justify-content-center ">
 
-        {# <div id="carousel" class="carousel slide carousel-fade carroussel d-flex align-items-center justify-content-center d-none d-md-block " data-bs-ride="carousel">
+        <div id="carousel" class="carousel slide carousel-fade carroussel d-flex align-items-center justify-content-center d-none d-md-block " data-bs-ride="carousel">
             <div class="carousel-inner">
                 {%  set isFirst = true %}
                 {% for imagediapo in imagediapos %}
@@ -173,7 +50,7 @@ hr {
                         {% set isFirst = false %}
                 {% endfor %}
             </div>
-        </div>     #}
+        </div>    
     </section>
     <section class="association d-flex justify-content-center align-items-center ">
         <div class="row m-0 justify-content-center">
@@ -217,9 +94,9 @@ hr {
                         </h2>
                         <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
-                                    {# {% for organigramme in organigrammes%}
+                                    {% for organigramme in organigrammes%}
                                         <a href="uploads/files/{{organigramme.fichier}}"> Organigramme</a>
-                                    {% endfor %} #}
+                                    {% endfor %}
                                 </br>
                              </div>
                         </div>
@@ -234,7 +111,7 @@ hr {
     <section class="lien-info d-flex justify-content-center align-items-center text-white">
         <div class="row w-75 mx-5">
             <div class="col-md-4 col-sm-12 ">
-            {# <a href="{{ path('actualites') }}" class="d-flex flex-column my-5 lien  align-items-center"> #}
+            <a href="{{ path('actualites') }}" class="d-flex flex-column my-5 lien  align-items-center">
                 <div class="d-flex justify-content-center ">
                 <i class="bi bi-star-fill text-center p-3"></i>
                 </div>
@@ -243,7 +120,9 @@ hr {
             </a>
             </div>
             <div class="col-md-4 col-sm-12  ">
-            {# <a href="{{ path('liens') }}" class="d-flex flex-column my-5 lien align-items-center"> #}
+            <a 
+            {# href="{{ path('liens') }}"  #}
+            class="d-flex flex-column my-5 lien align-items-center">
                 <div class="d-flex justify-content-center ">
                 <i class="bi bi-file-plus text-center p-3"></i>
                 </div>
@@ -252,7 +131,7 @@ hr {
             </a>
             </div>
             <div class="col-md-4 col-sm-12 ">
-            {# <a href="{{ path('ecolealae') }}" target="_blank" class="d-flex flex-column my-5 lien align-items-center"> #}
+            <a href="{{ path('ecole_alae') }}" target="_blank" class="d-flex flex-column my-5 lien align-items-center">
                 <div class="d-flex justify-content-center ">
                 <i class="bi bi-calendar3 text-center p-3"></i>
                 </div>
@@ -277,7 +156,7 @@ hr {
                         ● Etre vigilant à la sécurité des enfants au sein de l’école et émettre des suggestions sur la restauration scolaire. <br>
 
                 </p>
-                {# <a href="{{ path('parents_delegues') }}" class="p-2" >En savoir plus</a> #}
+                <a href="{{ path('parents_delegues') }}" class="p-2" >En savoir plus</a>
             </div>
             </div>
         </div>
@@ -294,7 +173,7 @@ hr {
 
 
                 </p>
-            {# <a href="{{ path('documents') }}" class="p-2" >En savoir plus</a> #}
+            <a href="{{ path('documents') }}" class="p-2" >En savoir plus</a>
         </div>
         </div>
         </div>
@@ -310,7 +189,7 @@ hr {
                         ●	Communiqués de la Mairie. <br>
                 </p>
 
-                {# <a href="{{ path('ecolealae') }}" class="p-2">En savoir plus</a> #}
+                <a href="{{ path('ecole_alae') }}" class="p-2">En savoir plus</a>
                 </div>
             </div>
             </div>      
@@ -322,7 +201,7 @@ hr {
             <h3 class="text-center">Contactez nous</h3>
             </div>
             <div class="col-lg-6 d-flex justify-content-center">
-            {# <a href="{{ path('contact') }}">Contact</a> #}
+            <a href="{{ path('contact') }}">Contact</a>
             </div>
         </div>
     </section>
