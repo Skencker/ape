@@ -19,7 +19,7 @@ class ImagesDiapoCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
-            ImageField::new('fichier')
+            ImageField::new('image')
                 ->setUploadDir('public/uploads/images')
                 ->setBasePath('uploads/images')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
