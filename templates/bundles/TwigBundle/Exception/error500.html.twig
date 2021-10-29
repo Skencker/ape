@@ -5,22 +5,16 @@
 {% block content %}
 
     <style>
-        body {
-            background-image: url("{{ asset('assets/images/village.jpg')}}");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            height: 88vh;
-        }
+
         .container {
-            background: #FFFFFF;
+            background: #fff;
             padding: 20px;
             margin-top: 100px;
         }
     </style> 
     <div class="container">
-        <h2> Page Introuvable erreur 500</h2>
-        <p> Désolé, cette page ne semble pas être accessible pour le moment.  </p>
+        <h2 class="text-dark"> Page Introuvable erreur 500</h2>
+        <p class="text-dark"> Désolé, cette page ne semble pas être accessible pour le moment.  </p>
         <a href=" {{ path('home')}}" class='btn btn-info d-flex justify-content-center'> Revenir à l'accueil </a>
     </div>
 {% endblock %}
