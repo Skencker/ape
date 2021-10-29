@@ -29,8 +29,8 @@
                                         <div class="row d-flex justify-content-center">
                                                 {% if parent.classe == classTab %}
                                                     <div class="col-6">
-                                                        <div class="row"> 
-                                                            <img class='img-fluid' height="560px" width="420px" src="/uploads/images/{{ parent.image }}"/>
+                                                        <div class="row" > 
+                                                            <img class='img-fluid' style='height:560px width:420px'src="/uploads/images/{{ parent.image }}"/>
                                                         </div>
                                                         {# <h3 class='text-center titre-classe fs-6'>{{parent.classe}}</h3>  #}
                                                         <div class="row d-flex justify-content-center fw-bolder text-center fs-6"> {{parent.classe}} <br>{{parent.fonction}}</div>
@@ -46,15 +46,10 @@
                 {% endfor %}    
             </div>
         </section>
-         <section class="contact d-flex justify-content-center align-items-center text-white ">
-            <div class="row d-flex justify-content-between align-items-center text-white w-100 px-5">
-                <div class="col-lg-6 justify-content-center">
-                <h3 class="text-center fs-md-5">Contactez nous</h3>
-                </div>
-                <div class="col-lg-6 d-flex justify-content-center">
-                <a href="{{ path('contact') }}" >Contact</a>
-                </div>
-            </div>
-        </section>
+    <section class="contact text-center text-white pt-4 ">
+   
+            <a href="{{ path('contact') }}" class='btn btn-lg'>Contact</a>
+   
+    </section>
     </main>
 {% endblock %}

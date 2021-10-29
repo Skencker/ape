@@ -51,12 +51,12 @@ img {
   margin-bottom: 50px;
 }
 
-.association h2 {
+.titre-association {
   font-family: 'Merriweather', serif;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
   color: var(--bleu);
-  font-size: 40px;
+  /* font-size: 40px; */
   font-weight: 900;
 }
 

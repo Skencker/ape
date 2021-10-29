@@ -30,11 +30,6 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-  
-:root {
-  --bleu: #1752a8;
-  --jaune: #f6e542;
-}
 
 /*Navigation*/
 .nav-link {
@@ -172,14 +167,7 @@ img {
   margin-bottom: 50px;
 }
 
-.association h2 {
-  font-family: 'Merriweather', serif;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-  color: var(--bleu);
-  font-size: 40px;
-  font-weight: 900;
-}
+
 
 .accordeon,
 .card {

@@ -1,0 +1,67 @@
+@startuml Mediatheque
+hide circle
+
+
+Class Users {
+    - id : Int
+    - email : String
+    # password : String
+    - roles : String
+}
+
+class Classes {
+  - id  : Int 
+  - name : String
+}
+
+class FonctionsParents {
+  - id  : Int 
+  - name : String
+}
+
+class Organigrammes {
+  - id  : Int 
+  - name : String
+  - fichier : String
+}
+
+class Documents {
+  - id  : Int 
+  - name : String
+  - fichier : String
+}
+
+class ConseilsEcole {
+  - id  : Int 
+  - name : String
+  - fichier : String
+}
+
+class ImagesDiapo {
+  - id  : Int 
+  - name : String
+  - image : String
+}
+
+class Actualites {
+  - id  : Int 
+  - name : String
+  - date : DateTime
+  - description : Text
+  - fichier : String
+  - image : String
+}
+
+class ParentsDelegues {
+  - id  : Int 
+  - name : String
+  - firstname : String
+  - fonction : Int
+  - classe : Int
+  - image : String
+}
+
+ParentsDelegues "0...*" -- "1" FonctionsParents
+ParentsDelegues "0..2" -- "1" Classes
+
+@enduml

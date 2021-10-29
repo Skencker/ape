@@ -46,10 +46,7 @@ class AdminDashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Image diapo', 'fas fa-image', ImagesDiapo::class);
         yield MenuItem::linkToCrud('Organigramme', 'fas fa-sitemap', Organigramme::class);
         yield MenuItem::linkToCrud('Actualites', 'fas fa-newspaper', Actualites::class);
-        // yield MenuItem::linkToCrud('Ecole-alae', 'fas fa-school', EcoleAale::class);
         yield MenuItem::linkToCrud('Documents', 'fas fa-file-alt', Documents::class);
-        // yield MenuItem::linkToCrud('Classes', 'fas fa-chalkboard-teacher', Classes::class);
-        // yield MenuItem::linkToCrud('Fonctions Parents Délégués', 'fas fa-users-cog', FonctionsParents::class);
         yield MenuItem::linkToCrud('Parents Délégués', 'fas fa-user-plus', ParentsDelegues::class);
         yield MenuItem::linkToCrud('Conseils Ecole', 'fas fa-file-alt', ConseilsEcole::class);
         yield MenuItem::linkToLogout('Deconnexion', 'fas fa-sign-out-alt', 'app_logout');

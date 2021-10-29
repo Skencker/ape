@@ -22,21 +22,21 @@
     <section class="baniere ">
         <div class="row margin m-5 h-100 justify-content-center">
             <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
-                <h1 class="text-light text-lg-end pt-5 ps-5">
+                <h1 class="text-light text-lg-end pt-5 ps-lg-5">
                     <div class="titre ">
                         Association <br>
                         Parents d'élèves <br> 
                         Saint Pierre de Lages  
                     </div>
                     <div class="bouton mt-2 mb-5">
-                        <a href="actualites.php" class="text-center p-2 btn  btn-primary"> Actualités / évènements </a>
+                        <a href="{{ path('actualites') }}"class="text-center p-2 btn  btn-primary"> Actualités / évènements </a>
                     </div>
                 </h1>
             </div>
             <!-- carroussel -->
         <div class="col-lg-5 col-md-8 carroussel d-flex align-items-center justify-content-center ">
 
-        <div id="carousel" class="carousel slide carousel-fade carroussel d-flex align-items-center justify-content-center d-none d-md-block " data-bs-ride="carousel">
+        <div id="carousel" class="carousel slide carousel-fade carroussel d-flex align-items-center justify-content-center  d-md-block " data-bs-ride="carousel">
             <div class="carousel-inner">
                 {%  set isFirst = true %}
                 {% for imagediapo in imagediapos %}
@@ -54,7 +54,7 @@
     </section>
     <section class="association d-flex justify-content-center align-items-center ">
         <div class="row m-0 justify-content-center">
-            <h2 class="text-center pb-5">L'association</h2>
+            <h2 class="text-center titre-association pb-5">L'association</h2>
             <div class="col-lg-6 col-sm-10 d-flex flex-column align-items-center ">
                 <div class="accordion accordion-flush align-self-center align-items-md-end w-100 p-5" id="accordionFlushExample">
                     <div class="accordion-item ">
@@ -195,15 +195,10 @@
             </div>      
         </div>
     </section>
-    <section class="contact d-flex justify-content-center align-items-center text-white ">
-        <div class="row d-flex justify-content-between align-items-center text-white w-100 px-5">
-            <div class="col-lg-6 justify-content-center">
-            <h3 class="text-center">Contactez nous</h3>
-            </div>
-            <div class="col-lg-6 d-flex justify-content-center">
-            <a href="{{ path('contact') }}">Contact</a>
-            </div>
-        </div>
+    <section class="contact text-center text-white pt-4 ">
+   
+            <a href="{{ path('contact') }}" class='btn btn-lg'>Contact</a>
+   
     </section>
             </main>
 
