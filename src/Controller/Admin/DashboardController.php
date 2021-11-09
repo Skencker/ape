@@ -10,6 +10,7 @@ use App\Entity\Organigramme;
 use App\Entity\Documents;
 use App\Entity\FonctionsParents;
 use App\Entity\Parentsdelegues;
+use App\Entity\TrombiEcoleAlae;
 use App\Entity\Users;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -17,6 +18,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator ;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 use Twig\Extra\Intl\IntlExtension;
 
@@ -26,6 +28,7 @@ class DashboardController extends AbstractDashboardController
 {
     /**
      * @Route("/superadmin", name="super_admin")
+     * @IsGranted("ROLE_SUPERADMIN")
      */
     public function index(): Response
     {
@@ -54,6 +57,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Fonctions Parents Délégués', 'fas fa-users-cog', FonctionsParents::class);
         yield MenuItem::linkToCrud('Parents Délégués', 'fas fa-user-plus', ParentsDelegues::class);
         yield MenuItem::linkToCrud('Conseils Ecole', 'fas fa-file-alt', ConseilsEcole::class);
+        yield MenuItem::linkToCrud('Trombinoscope Ecole/Alae', 'fas fa-file-alt', TrombiEcoleAlae::class);
         yield MenuItem::linkToLogout('Deconnexion', 'fas fa-sign-out-alt', 'app_logout');
     }
 }

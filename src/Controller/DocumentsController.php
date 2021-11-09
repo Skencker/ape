@@ -21,8 +21,8 @@ class DocumentsController extends AbstractController
     #[Route('/documents', name: 'documents')]
     public function index(): Response
     {
-        $conseilEcole = $this->entityManager->getRepository(ConseilsEcole::class)->findAll();
-        $documents = $this->entityManager->getRepository(Documents::class)->findAll();
+        $conseilEcole = $this->entityManager->getRepository(ConseilsEcole::class)->findBy(array(),array('date' => 'DESC'));
+        $documents = $this->entityManager->getRepository(Documents::class)->findBy(array(),array('date' => 'DESC'));
 
         return $this->render('documents/index.html.twig', [
             'conseilecole' => $conseilEcole,

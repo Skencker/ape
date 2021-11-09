@@ -10,6 +10,7 @@ use App\Entity\Organigramme;
 use App\Entity\Documents;
 use App\Entity\FonctionsParents;
 use App\Entity\Parentsdelegues;
+use App\Entity\TrombiEcoleAlae;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -49,6 +50,7 @@ class AdminDashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Documents', 'fas fa-file-alt', Documents::class);
         yield MenuItem::linkToCrud('Parents Délégués', 'fas fa-user-plus', ParentsDelegues::class);
         yield MenuItem::linkToCrud('Conseils Ecole', 'fas fa-file-alt', ConseilsEcole::class);
+        yield MenuItem::linkToCrud('Trombinoscope Ecole/Alae', 'fas fa-file-alt', TrombiEcoleAlae::class);
         yield MenuItem::linkToLogout('Deconnexion', 'fas fa-sign-out-alt', 'app_logout');
         yield MenuItem::linkToUrl('Super Admin', 'far fa-window-maximize', '/superadmin');
     }

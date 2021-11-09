@@ -24,18 +24,18 @@
         <section class="events">
             <div class="container">
                 <div class="row event">
-                        {% for actualite in actualites %}
-                            <div class="col-lg-6 col-md-12 p-5">
-                                <img class="img img-fluid" src="/uploads/images/{{ actualite.image }}"alt="{{ actualite.name }}">
-                            </div>
-                            <div class="col p-5">
-                                <h2 >{{ actualite.name }}</h2>
-                                <hr>
-                                <h4> {{ actualite.date|date("d/m/Y")}} </h4>
-                                <p>{{ actualite.description }}</p>
-                                <a href=""> Document </a>
-                            </div>
-                        {% endfor %}
+                    {% for actualite in actualites %}
+                        <div class="col-lg-6 col-md-12 p-5">
+                            <img class="img img-fluid" src="/uploads/images/{{ actualite.image }}"alt="{{ actualite.name }}">
+                        </div>
+                        <div class="col p-5">
+                            <h2 >{{ actualite.name }}</h2>
+                            <hr>
+                            <h4> {{ actualite.date|date("d/m/Y")}} </h4>
+                            <p>{{ actualite.description }}</p>
+                            <a href=""> Document </a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

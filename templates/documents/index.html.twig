@@ -17,11 +17,11 @@
     }
 </style>
 
-<main>
+<main class="container-fluid">
     <section class="baniere-doc d-flex justify-content-center">
         <h1 class="align-self-center">Documents</h1>
     </section>
-    <section class="doc d-flex justify-content-center align-items-center" style="height:400px">
+    <section class="doc d-flex justify-content-center align-items-center" style="height:500px">
         <div class="accordion accordion-flush w-50" id="accordionFlushExample">
                    <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
@@ -32,7 +32,7 @@
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         {% for conseil in conseilecole %}
-                        <a href="uploads/files/{{conseil.fichier}}">{{ conseil.name }} {{ conseil.date }} </a> </br>
+                        <a href="uploads/files/{{conseil.fichier}}">{{ conseil.name }} {{ conseil.date|date("d/m/Y")}} </a> </br>
                             </br>
                         {% endfor %}
                     </div>
@@ -47,7 +47,7 @@
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         {% for document in documents %}
-                            <a href="uploads/files/{{document.fichier}}">{{ document.name }} {{ document.date }} </a> </br>
+                            <a href="uploads/files/{{document.fichier}}">{{ document.name }} {{ document.date|date("d/m/Y") }} </a> </br>
                                 </br>
                         {% endfor %}
                     </div>
@@ -68,7 +68,7 @@
             </div>
         </div>
     </section>
-    <section class="contact text-center text-white pt-4 ">
+    <section class="contact text-center text-white pt-4">
    
             <a href="{{ path('contact') }}" class='btn btn-lg'>Contact</a>
    

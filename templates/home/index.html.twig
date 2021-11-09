@@ -19,7 +19,7 @@
 
 
 </style>
-<main class="container-fluid p-0 m-0 " ps-0>
+<main class="container-fluid p-0 m-0 " >
     <section class="baniere ">
         <div class="row margin m-5 h-100 justify-content-center">
             <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center">
@@ -122,13 +122,13 @@
             </div>
             <div class="col-md-4 col-sm-12  ">
             <a 
-            {# href="{{ path('liens') }}"  #}
+            href="{{ path('documents') }}" 
             class="d-flex flex-column my-5 lien align-items-center">
                 <div class="d-flex justify-content-center ">
                 <i class="bi bi-file-plus text-center p-3"></i>
                 </div>
                 <hr class="hr">
-                <h3 class="text-center">Liens</h3>
+                <h3 class="text-center">Documents</h3>
             </a>
             </div>
             <div class="col-md-4 col-sm-12 ">
@@ -201,6 +201,6 @@
             <a href="{{ path('contact') }}" class='btn btn-lg'>Contact</a>
    
     </section>
-            </main>
+</main>
 
 {% endblock %}

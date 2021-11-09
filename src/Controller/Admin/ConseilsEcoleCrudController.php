@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\ConseilsEcole;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
@@ -20,7 +21,7 @@ class ConseilsEcoleCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
-            TextField::new('date'),
+            DateField::new('date'),
             ImageField::new('fichier')
                 ->setUploadDir('public/uploads/files')
                 ->setBasePath('uploads/files')
